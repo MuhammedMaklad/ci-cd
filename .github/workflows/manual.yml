@@ -1,0 +1,9 @@
+name: Manual Trigger Workflow
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Application
+        run: echo "Deploying the application..."

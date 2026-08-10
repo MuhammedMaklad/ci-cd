@@ -1,0 +1,10 @@
+name: schedule workflow event
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs every day at midnight UTC
+jobs:
+  daily-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Daily Task Message
+        run: echo "This is a scheduled daily task running at midnight UTC."
