@@ -1,0 +1,19 @@
+name: Steps
+on:
+  workflow_dispatch:
+jobs:
+  step_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: |
+          npm install
+          npm run build
+        working-directory: ./frontend
+        shell: bash
+      - name: Step 2
+        run: |
+          npm install
+          npm test
+        working-directory: ./backend
+        shell: bash
