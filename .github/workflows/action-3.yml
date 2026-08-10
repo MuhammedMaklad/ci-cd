@@ -1,0 +1,16 @@
+name: hybrid action
+on:
+  workflow_dispatch:
+jobs:
+  action-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a message
+        run: echo "This is a hybrid action workflow!"
+      - name: Run inside Docker Container
+        uses: docker://alpine:latest
+        with:
+          entrypoint: /bin/sh
+          args: -c "echo 'Running inside Docker container!'"
+      - name: Back to host environment
+        run: echo "Back to the host environment!"

@@ -1,0 +1,14 @@
+name: Running action in Docker container
+on:
+  workflow_dispatch:
+jobs:
+  action-4:
+    runs-on: ubuntu-latest
+    container:
+      image: node:latest
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - run: node --version
+      - run: echo "This action is running inside a Docker container with Node.js!"

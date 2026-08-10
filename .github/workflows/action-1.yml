@@ -1,0 +1,11 @@
+name: Use GitHub Actions
+on:
+  workflow_dispatch:
+jobs:
+  action-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2 # uses: --> use for
+      - name: Run a script
+        run: echo "Hello, GitHub Actions!"

@@ -1,0 +1,15 @@
+name: use custom action
+on:
+  workflow_dispatch:
+jobs:
+  action-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run custom action
+        uses: ./github/actions/my-custom-action
+        with:
+          input1: "value1"
+          input2: "value2"
+        env:
+          ENV_VAR1: "env_value1"
+          ENV_VAR2: "env_value2"
